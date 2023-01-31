@@ -2,9 +2,6 @@
     display: grid;
     place-content: center;
     min-height: 80vh;
-}
-
-.mid-content {
     font-size: 4rem;
 }
 
@@ -46,4 +43,62 @@
 .edit-link{
     text-decoration: underline;
     color: blueviolet;
+}
+
+/* ----------------------Edit Page-------------------- */
+
+.edit-page, .add-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 15rem;
+    flex-wrap: wrap;
+    gap: 8rem;
+    margin-top: 5rem;
+}
+ fieldset{
+    width: 25rem;
+    height: 4rem;
+    border: 1px solid ;  
+    border-color: rgb(141, 137, 137);  
+    outline-color: transparent;
+    border-radius: 8px;    
+}
+fieldset:hover, legend:hover{
+    border-color: black;
+}
+fieldset:focus, legend:focus{
+    border-color: aqua;
+}
+ fieldset legend{
+    font-size: .8rem;
+    color: rgb(108, 108, 108)
+}
+ fieldset input{
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    margin: 0 .5rem;
+}
+.edit-button, .add-button{
+    display: flex;
+    gap: 3rem;
+    justify-content: right;
+    align-items: center;
+    height: 10rem;
+    max-width: 70rem;
+}
+.cancel{
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 1rem 4rem;
+    font-size: 1.2rem;
+}
+.update{
+    background-color: rgb(110, 110, 210);
+    border: 1px solid black;
+    border-radius: 2rem;
+    padding: 1rem 4rem;
+    font-size: 1.2rem;
 }

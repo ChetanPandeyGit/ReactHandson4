@@ -2,7 +2,7 @@ import './style.css'
 
 function Home() {
   return (
-    <div className="main mid-content">
+    <div className="main">
       Home Page
     </div>
   )

@@ -2,7 +2,7 @@ import './style.css'
 
 function ContactUs() {
   return (
-    <div className="main mid-content">
+    <div className="main">
       Contact Us Page
     </div>
   )

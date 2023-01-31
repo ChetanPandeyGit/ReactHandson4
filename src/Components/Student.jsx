@@ -1,12 +1,15 @@
 import './style.css'
-import StudentDetails from './StudentDetails'
+import { useContext } from 'react'
+import DataContext from './DataContext'
+import { Link } from 'react-router-dom'
 
 function Student() {
+  const context = useContext(DataContext)
   return (
     <div className="student-page">
       <div className="student-header">
         <h1>Student Details</h1>
-        <div id='add-new-btn'>Add New Student</div>
+        <Link className='link inner-link'  to='/add-page' ><div id='add-new-btn'>Add New Student</div></Link> 
       </div>
       <div className="student-table">
         <div className="student-table-content">
@@ -17,17 +20,17 @@ function Student() {
           <div >Change</div>
         </div>
         <hr />
-        <StudentDetails name='John' age='25' course='MERN' batch='April' change='Edit' />
-        <hr />
-        <StudentDetails name='Doe' age='26' course='MERN' batch='August' change='Edit' />
-        <hr />
-        <StudentDetails name='Biden' age='22' course='MERN' batch='June' change='Edit' />
-        <hr />
-        <StudentDetails name='Barar' age='23' course='MERN' batch='September' change='Edit' />
-        <hr />
-        <StudentDetails name='Christ' age='24' course='MERN' batch='June' change='Edit' />
-        <hr />
-        <StudentDetails name='Elent' age='27' course='MERN' batch='October' change='Edit' />
+        {context.data.map((item, index) => (
+          <>
+            <div key={index} className="student-table-content">
+              <div className='student-name'>{item.name}</div>
+              <div>{item.age}</div>
+              <div>{item.course}</div>
+              <div>{item.batch}</div>
+              <Link to='/edit-page' state={{ data: index }}>Edit </Link>
+            </div>
+            <hr /></>
+        ))}
       </div>
     </div>
   )
